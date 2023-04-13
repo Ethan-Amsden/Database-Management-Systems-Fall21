@@ -1,0 +1,28 @@
+Requirements for Project:
+
+2 nodes - 2 from each relation
+3 relationships
+
+Cypher written to copy into neo4j and run as block.
+Otherwise, relationship creation would look like:
+
+MATCH (var1 definevar1)
+MATCH (var2 definevar2)
+CREATE var1 -[:RELATIONSHIP]-> var2
+
+All values are placeholders.
+
+dob inserted as text literal to reduce confusion on reading.
+elsewise, dob reads as 20000101 (e.g.) instead of 2000-01-01.
+could run as decimal integer, but would require parsing on extraction.
+
+some field names changed from RSD for clarity and self consistency. sp. reg_num -> cprid.
+
+Generated from RSD from previous project, using schema as presented by neo4j documentation.
+
+Row = Node
+Table_name = Label_name
+Foreign Key = Relationship
+
+Theory: benefit to graph db in reduction of necessary tables, as intermediary relations that primarily
+associate FKs can be reduced to a relationship

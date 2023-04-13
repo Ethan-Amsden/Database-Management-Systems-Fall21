@@ -1,0 +1,25 @@
+CREATE (clr1 :Campleader {clrid: 1, fname: 'Elliott', lname: 'Evers', dob: '1999-09-17', hiredate: '2021-01-01', wage: 7.00})
+CREATE (clr2 :Campleader {clrid: 2, fname: 'Ett', lname: 'Ers', dob: '1989-10-11', hiredate: '2007-08-03', wage: 12.00})
+
+CREATE (gs1 :Guestspeaker {gsid: 1, fname: 'Jack', lname: 'Blase', dob: '1969-03-17', wage: 15.00})
+CREATE (gs2 :Guestspeaker {gsid: 2, fname: 'James', lname: 'Green', dob: '1949-11-19', wage: 20.00})
+
+CREATE (cmp1 :Camp {cmpid: 1, name: 'Lost Woods', address: '123 Anywhere, Anywhere, OH', built: 1904, years_in_service: 117, weeks_num: 4})
+CREATE (cmp2 :Camp {cmpid: 2, name: 'Found Lake', address: '321 Nowhere, Nowhere, OH', built: 2000, years_in_service: 21, weeks_num: 10})
+
+CREATE (cb1 :Cabin {cbid: 1, slots_num: 8, built: 2004, years_in_service: 17, num_stories: 1, jr_or_sr: 'jr'})
+CREATE (cb2 :Cabin {cbid: 2, slots_num: 16, built: 1964, years_in_service: 57, num_stories: 2, jr_or_sr: 'sr'})
+
+CREATE (cpr1 :Camper {cprid: 1, fname: 'Tom', lname: 'Piper', dob: '2000-06-08', first_year_date: 2007, home_address: '543 Muffin Lane, Clancy, MI'})
+CREATE (cpr2 :Camper {cprid: 2, fname: 'Nancy', lname: 'Piper', dob: '2002-12-04', first_year_date: 2009, home_address: '543 Muffin Lane, Clancy, MI'})
+
+CREATE (cns1 :Counselor {cnsid: 1, fname: 'Eve', lname: 'Green', dob: '1996-10-16', returning: 'y', wage: 20.00})
+CREATE (cns2 :Counselor {cnsid: 2, fname: 'Adam', lname: 'Brown', dob: '1983-10-16', returning: 'y', wage: 15.00})
+
+
+CREATE (a1 :Assistant {asid: 1, fname: 'Bruche', lname: 'Rolfstein', dob: '2000-05-16', returning: 'y', wage: 10.00})
+CREATE (a2 :Assistant {asid: 2, fname: 'Grune', lname: 'Rolfstein', dob: '2000-05-16', returning: 'y', wage: 10.00})
+
+CREATE (clr1) -[:LEADS]-> (cmp1)
+CREATE (cb1) -[:HOUSES]-> (cpr2)
+CREATE (a2) -[:ASSISTS]-> (cns1)
